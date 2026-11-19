@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKUIN - Keuangan Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2 class="logo">SAKUIN.</h2>
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#form-section">Tambah Transaksi</a>
+            <a href="#transaction-section">Riwayat Transaksi</a>
+            <a href="#report-section">Laporan Keuangan</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Halo, Mahasiswa! 👋</h1>
+            <p>Yuk, mulai atur keuanganmu bersama SAKUIN.</p>
+        </header>
+
+        <section class="balance-card">
+            <p>Total Saldo</p>
+            <h2 id="balance">Rp0</h2>
+            <span>Saldo keuangan kamu saat ini</span>
+        </section>
+
+        <section class="summary">
+            <div class="summary-card">
+                <p>Total Pemasukan</p>
+                <h3 id="income">Rp0</h3>
+            </div>
+            <div class="summary-card">
+                <p>Total Pengeluaran</p>
+                <h3 id="expense">Rp0</h3>
+            </div>
+        </section>
+
+        <section class="form-section" id="form-section">
+            <h2>Tambah Transaksi</h2>
+            <form id="transaction-form">
+                <label for="transaction-name">Nama Transaksi</label>
+                <input type="text" id="transaction-name"
+                    placeholder="Contoh: Uang makan" required>
+
+                <label for="transaction-type">Jenis Transaksi</label>
+                <select id="transaction-type" required>
+                    <option value="income">Pemasukan</option>
+                    <option value="expense">Pengeluaran</option>
+                </select>
+
+                <label for="transaction-category">Kategori</label>
+                <select id="transaction-category" required>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Transportasi">Transportasi</option>
+                    <option value="Pendidikan">Pendidikan</option>
+                    <option value="Hiburan">Hiburan</option>
+                    <option value="Kebutuhan">Kebutuhan</option>
+                    <option value="Uang Saku">Uang Saku</option>
+                    <option value="Gaji">Gaji</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+
+                <label for="transaction-amount">Jumlah Uang (Rp)</label>
+                <input type="number" id="transaction-amount"
+                    placeholder="Masukkan jumlah uang" min="1" required>
+
+                <button type="submit">Simpan Transaksi</button>
+            </form>
+        </section>
+
+        <section class="transaction-section" id="transaction-section">
+            <h2>Transaksi Terakhir</h2>
+            <div id="transaction-list">
+                <p>Belum ada transaksi.</p>
+            </div>
+        </section>
+
+        <section class="report-section" id="report-section">
+            <h2>Laporan Keuangan Bulanan</h2>
+            <p class="report-description">
+                Lihat ringkasan pemasukan dan pengeluaran setiap bulan.
+            </p>
+
+            <label for="report-month">Pilih Bulan</label>
+            <input type="month" id="report-month">
+
+            <div class="report-summary">
+                <div class="report-card">
+                    <p>Total Pemasukan</p>
+                    <h3 id="monthly-income">Rp0</h3>
+                </div>
+                <div class="report-card">
+                    <p>Total Pengeluaran</p>
+                    <h3 id="monthly-expense">Rp0</h3>
+                </div>
+                <div class="report-card">
+                    <p>Sisa Saldo</p>
+                    <h3 id="monthly-balance">Rp0</h3>
+                </div>
+            </div>
+
+            <h3 class="category-title">Grafik Keuangan</h3>
+
+            <div class="chart-container">
+                <div class="chart-item">
+                    <div class="chart-value" id="chart-income-value">Rp0</div>
+                    <div class="chart-bar income-bar" id="chart-income-bar"></div>
+                    <p>Pemasukan</p>
+                </div>
+
+                <div class="chart-item">
+                    <div class="chart-value" id="chart-expense-value">Rp0</div>
+                    <div class="chart-bar expense-bar" id="chart-expense-bar"></div>
+                    <p>Pengeluaran</p>
+                </div>
+            </div>
+
+            <h3 class="category-title">
+                Pengeluaran Berdasarkan Kategori
+            </h3>
+
+            <div id="category-report">
+                <p>Belum ada data pengeluaran.</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
